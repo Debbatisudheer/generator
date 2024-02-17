@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Monitor</h1>
+        <div class="box">
+            <div id="temperatureDisplay"></div>
+        </div>
+        <div class="box">
+            <div id="alertDisplay"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+ <div class="summary">
+        <h2>Functionality Summary:</h2>
+        <p>
+            <strong>Temperature Sensor Generator (temperature_sensor):</strong><br>
+                This generator function simulates a temperature sensor that continuously produces temperature readings. It yields temperature readings one at a time using the yield keyword. The generator pauses after each yield, allowing other parts of the code to process the temperature reading or perform other tasks before requesting the next reading.
+        </p>
+        <p>
+            <strong>Average Temperature Calculator Generator (calculate_average_temperature):</strong><br>
+               This generator function calculates the average temperature over a specified window size. It consumes temperature readings from the temperature sensor generator (sensor) and calculates the average temperature over each window. It yields the average temperature for each window, allowing other parts of the code to process the average temperature or perform further calculations before moving on to the next window.
+        </p>
+        <p>
+            <strong>Temperature Alert Generator (generate_temperature_alerts):</strong><br>
+                This generator function generates temperature alerts when the temperature exceeds a predefined threshold. It consumes temperature readings from the temperature sensor generator (sensor). If a temperature reading exceeds the threshold, it yields a high temperature alert message. Like other generators, it pauses after each yield, allowing other parts of the code to process the alert or perform additional actions before checking the next temperature reading.
+        </p>
+        <p>
+            In summary, generators play a crucial role in providing a continuous stream of temperature readings, calculating average temperatures over time, and generating alerts based on specific conditions. They enable a streamlined and memory-efficient approach to handling continuous data streams by producing values on-demand and pausing execution when not actively generating values.
+        </p>
+    </div>
+ <div class="alternatives">
+        <h2>Alternative Methods:</h2>
+        <ul>
+            <li>
+                <strong>Using Threads or Asyncio:</strong><br>
+                You can create separate threads or use asyncio to run concurrent tasks for reading temperature data, calculating averages, and generating alerts. Each task can continuously poll the temperature sensor at a specific interval, perform calculations, and generate alerts as needed.
+            </li>
+            <li>
+                <strong>Using Callbacks or Event Handlers:</strong><br>
+                Instead of generators, you can utilize callback functions or event handlers to react to new temperature readings as they arrive. When a new reading is available, the callback function can process the data, calculate averages, and generate alerts accordingly.
+            </li>
+            <li>
+                <strong>Using Queues:</strong><br>
+                You can use a queue data structure to store temperature readings as they come in. Separate processes or threads can continuously consume readings from the queue, calculate averages, and generate alerts based on the data.
+            </li>
+            <li>
+                <strong>Using Real-Time Data Processing Frameworks:</strong><br>
+                For more complex temperature monitoring systems, you might leverage real-time data processing frameworks like Apache Kafka or Apache Flink. These frameworks provide robust tools for ingesting, processing, and analyzing streaming data in real-time.
+            </li>
+        </ul>
+    </div>
+<div class="benefits">
+        <h2>Specialties and Benefits of Generators:</h2>
+        <ul>
+            <li>
+                <strong>Lazy Evaluation:</strong><br>
+                Generators employ lazy evaluation, meaning they produce values on-the-fly as they are needed, rather than generating all values at once.
+            </li>
+            <li>
+                <strong>Memory Efficiency:</strong><br>
+                Generators are memory efficient because they do not store the entire sequence of values in memory simultaneously.
+            </li>
+            <li>
+                <strong>Simplicity and Readability:</strong><br>
+                Generator functions are often simpler and more readable than equivalent code using traditional data structures and iteration techniques.
+            </li>
+            <li>
+                <strong>Conciseness:</strong><br>
+                Generators can significantly reduce code verbosity by abstracting away iteration details and allowing for more concise code constructs.
+            </li>
+            <li>
+                <strong>Support for Infinite Sequences:</strong><br>
+                Generators can represent infinite sequences, such as mathematical series or continuous data streams, without consuming excessive memory.
+            </li>
+            <li>
+                <strong>Composability and Flexibility:</strong><br>
+                Generator functions can be composed and chained together using Python's built-in functions and with other generators.
+            </li>
+        </ul>
+    </div>
+<footer>
+        <p>&copy; 2024 @sudheer debbati. All rights reserved.</p>
+    </footer>
+</body>
+</html>
